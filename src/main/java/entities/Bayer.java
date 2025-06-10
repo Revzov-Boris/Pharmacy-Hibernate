@@ -1,17 +1,19 @@
-package src.entities;
+package entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.time.LocalDate;
-
-@Getter @Setter
-@AllArgsConstructor @NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "workers")
-public class Worker {
+@Table(name = "bayers")
+public class Bayer {
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -25,14 +27,11 @@ public class Worker {
     @Column(name = "phone_number")
     private String phoneNumber;
     private String email;
-    @Column(name = "date_of_birth")
-    private LocalDate dateOfBirth;
-    private String education;
-
 
     @Override
     public String toString() {
-        return String.format("%s | %s | %s | %s | %s | %s | %s | %s | %s",
-                id, firstName, secondName, thirdName, gender, phoneNumber, email, dateOfBirth, education);
+        return String.format("%s | %s | %s | %s | %s | %s | %s ",
+                id, firstName, secondName, thirdName, gender, phoneNumber, email);
     }
+
 }

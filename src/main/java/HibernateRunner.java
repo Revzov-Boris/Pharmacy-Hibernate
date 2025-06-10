@@ -1,11 +1,9 @@
-package src;
-
+import dao.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import static org.hibernate.cfg.AvailableSettings.*;
 
-import src.entities.*;
+import entities.*;
 
 public class HibernateRunner {
     public static void main(String[] args) {
@@ -36,10 +34,13 @@ public class HibernateRunner {
         //getContracts(factory);
         //getManufacturers(factory);
         //getOrders(factory);
-        //getFullfilds(factory);
+        getFullfilds(factory);
         //getBayers(factory);
         //getCheques(factory);
-        getPositions(factory);
+        //getPositions(factory);
+        //testDAO();
+        FullfildDao d =new FullfildDao();
+        d.getAllFullfild().forEach(System.out::println);
     }
 
     public static void getMedicines(SessionFactory factory) {
@@ -108,6 +109,12 @@ public class HibernateRunner {
         session.createNativeQuery("select * from positions", Position.class)
                 .getResultList().forEach(System.out::println);
         session.close();
+    }
+
+    public static void testDAO() {
+        MedicineDao medicineDao = new MedicineDao();
+        medicineDao.getAllMedicines().forEach(System.out::println);
+
     }
 
 

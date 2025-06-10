@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<TableView fx:id="tableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.7" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.PharmacyTableController">
+    <columns>
+        <TableColumn fx:id="idColumn" prefWidth="48.0" text="id" />
+        <TableColumn fx:id="nameColumn" prefWidth="102.0" text="Название" />
+        <TableColumn fx:id="phoneNumberColumn" prefWidth="75.0" text="Телефон" />
+        <TableColumn fx:id="addressColumn" prefWidth="75.0" text="Адрес" />
+        <TableColumn fx:id="storageSquareColumn" prefWidth="75.0" text="Площадь склада" />
+        <TableColumn fx:id="hallSquareColumn" prefWidth="75.0" text="Площадь зала" />
+
+    </columns>
+</TableView>

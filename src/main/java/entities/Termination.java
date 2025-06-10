@@ -1,25 +1,22 @@
-package src.entities;
+package entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 
 @Getter @Setter
-@AllArgsConstructor @NoArgsConstructor
+@NoArgsConstructor @AllArgsConstructor
 @Entity
-@Table(name = "fulfilleds")
-public class Fullfild {
+@Table(name = "terminations")
+public class Termination {
     @Id
     private Long id;
 
     @OneToOne(fetch = FetchType.LAZY)
-    @MapsId  // Берет id из order
+    @MapsId  // Берет id из contract
     @JoinColumn(name = "id")  // Столбец id (и PK, и FK)
-    private Order order;
+    private Contract contract;
 
     private LocalDate date;
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.5040080160320641" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21.0.7" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.MainController">
+  <items>
+    <AnchorPane id="paneLeft" fx:id="leftPane" maxWidth="500.0" minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="165.0">
+         <children>
+            <ListView id="tablesList" fx:id="tableListView" maxWidth="300.0" prefHeight="158.0" prefWidth="500.0" style="-fx-background-color: AAAAAA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ListView id="serchList" fx:id="searchListView" prefHeight="433.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+         </children></AnchorPane>
+    <AnchorPane id="paneRight" fx:id="rightPane" maxHeight="600.0" minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="260.0" />
+  </items>
+</SplitPane>

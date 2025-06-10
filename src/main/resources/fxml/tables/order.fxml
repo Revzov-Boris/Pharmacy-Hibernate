@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<TableView fx:id="tableView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21.0.7" fx:controller="gui.controllers.OrderTableController">
+  <columns>
+    <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" />
+    <TableColumn fx:id="workerIdColumn" prefWidth="75.0" text="id работника" />
+      <TableColumn fx:id="pharmacyIdColumn" prefWidth="75.0" text="id аптеки" />
+      <TableColumn fx:id="manufacturerIdColumn" prefWidth="75.0" text="id производителя" />
+      <TableColumn fx:id="medicineIdColumn" prefWidth="75.0" text="id лекарства" />
+      <TableColumn fx:id="quantityColumn" prefWidth="75.0" text="количество" />
+      <TableColumn fx:id="priceForOneColumn" prefWidth="75.0" text="цена за штуку" />
+      <TableColumn fx:id="dateColumn" prefWidth="75.0" text="дата" />
+  </columns>
+</TableView>
