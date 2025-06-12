@@ -1,9 +1,12 @@
 import dao.*;
+import dao.requests.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import entities.*;
+
+import java.math.BigDecimal;
 
 public class HibernateRunner {
     public static void main(String[] args) {
@@ -20,6 +23,7 @@ public class HibernateRunner {
                 .addAnnotatedClass(Bayer.class)
                 .addAnnotatedClass(Cheque.class)
                 .addAnnotatedClass(Position.class)
+
 //                // use database from URL, with user/password
 //                .setProperty(URL, "jdbc:postgresql://localhost:5432/rut_head_hunter")
 //                .setProperty(USER, "postgres")
@@ -34,13 +38,12 @@ public class HibernateRunner {
         //getContracts(factory);
         //getManufacturers(factory);
         //getOrders(factory);
-        getFullfilds(factory);
+        //getFullfilds(factory);
         //getBayers(factory);
         //getCheques(factory);
         //getPositions(factory);
         //testDAO();
-        FullfildDao d =new FullfildDao();
-        d.getAllFullfild().forEach(System.out::println);
+        ChequesWithDietarySupplements.getCheque().forEach(System.out::println);
     }
 
     public static void getMedicines(SessionFactory factory) {

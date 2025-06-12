@@ -26,6 +26,14 @@ public class MainController {
             Map.entry ("Позиции", "/fxml/tables/position.fxml")
     );
 
+    private Map<String, String> pathsToParameterizedRequestFxml = Map.ofEntries(
+            Map.entry("Покупки в аптеке", "/fxml/requests/purchasesInPharmacy.fxml"),
+            Map.entry("Покупатель в городе", "/fxml/requests/bayerInCity.fxml"),
+            Map.entry("Работники аптеки", "/fxml/requests/currentContractsInPharmacy.fxml"),
+            Map.entry("Дорогие закупки", "/fxml/requests/bigOrders.fxml"),
+            Map.entry("Чеки с БАД", "/fxml/requests/chequesWith.fxml")
+    );
+
     @FXML
     private AnchorPane rightPane;
 
@@ -59,11 +67,16 @@ public class MainController {
 
     @FXML
     private void initialize() {
-        tableListView.getItems().addAll("Покупатели", "Аптеки", "Сотрудники", "Договоры", "Расторжения", "Производители", "Лекарства", "Закупки", "Выполненные", "Чеки", "Позиции");
-
+        tableListView.getItems().addAll(pathsToTableFxml.keySet());
+        searchListView.getItems().addAll(pathsToParameterizedRequestFxml.keySet());
         tableListView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
             if (newVal != null) {
                 loadContent(pathsToTableFxml.get(newVal));
+            }
+        });
+        searchListView.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+            if (newVal != null) {
+                loadContent(pathsToParameterizedRequestFxml.get(newVal));
             }
         });
 
