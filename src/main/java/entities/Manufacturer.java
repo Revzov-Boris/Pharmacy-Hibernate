@@ -18,6 +18,6 @@ public class Manufacturer {
 
     @Override
     public String toString() {
-        return String.format("%s | %S | %s | %s", id, name, phoneNumber, address);
+        return String.format("%s (id = %s)", name, id);
     }
 }

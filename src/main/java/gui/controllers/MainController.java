@@ -31,7 +31,8 @@ public class MainController {
             Map.entry("Покупатель в городе", "/fxml/requests/bayerInCity.fxml"),
             Map.entry("Работники аптеки", "/fxml/requests/currentContractsInPharmacy.fxml"),
             Map.entry("Дорогие закупки", "/fxml/requests/bigOrders.fxml"),
-            Map.entry("Чеки с БАД", "/fxml/requests/chequesWith.fxml")
+            Map.entry("Чеки с БАД", "/fxml/requests/chequesWith.fxml"),
+            Map.entry("Агрегатные запросы", "/fxml/requests/aggregateSearch.fxml")
     );
 
     @FXML

@@ -6,8 +6,6 @@ import org.hibernate.cfg.Configuration;
 
 import entities.*;
 
-import java.math.BigDecimal;
-
 public class HibernateRunner {
     public static void main(String[] args) {
         var factory = new Configuration() // configure("hibernate.properties") as default is exists
@@ -43,7 +41,7 @@ public class HibernateRunner {
         //getCheques(factory);
         //getPositions(factory);
         //testDAO();
-        ChequesWithDietarySupplements.getCheque().forEach(System.out::println);
+        System.out.println(AggregationRequest.revenueForDietarySupplements(70L));
     }
 
     public static void getMedicines(SessionFactory factory) {
