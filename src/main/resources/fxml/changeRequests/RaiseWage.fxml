@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21.0.7" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.changeControllers.RaiseWageController">
+   <children>
+      <Label layoutX="57.0" layoutY="14.0" prefHeight="17.0" prefWidth="487.0" text="Увеличить зарплату сотрудникам на M %, чьи контракты действуют уже более N лет" />
+      <Spinner fx:id="yearSpinner" layoutX="85.0" layoutY="45.0" />
+      <Spinner fx:id="percentSpinner" layoutX="85.0" layoutY="78.0" />
+      <Label layoutX="53.0" layoutY="49.0" prefHeight="17.0" prefWidth="23.0" text="Лет" />
+      <Label layoutX="53.0" layoutY="82.0" prefHeight="17.0" prefWidth="23.0" text="\%" />
+      <TableView fx:id="aldContractsTable" layoutX="27.0" layoutY="162.0" prefHeight="214.0" prefWidth="216.0">
+          <columns>
+              <TableColumn fx:id="idColumn" prefWidth="75.0" text="id" />
+              <TableColumn fx:id="pharmacyIdColumn" prefWidth="75.0" text="id аптеки" />
+              <TableColumn fx:id="workerIdColumn" prefWidth="91.0" text="id работника" />
+              <TableColumn fx:id="dateColumn" prefWidth="75.0" text="Дата" />
+              <TableColumn fx:id="wageColumn" prefWidth="75.0" text="Зарплата" />
+          </columns>
+      </TableView>
+      <TableView fx:id="newContractsTable" layoutX="318.0" layoutY="162.0" prefHeight="214.0" prefWidth="252.0">
+          <columns>
+              <TableColumn fx:id="newIdColumn" prefWidth="75.0" text="id" />
+              <TableColumn fx:id="newPharmacyIdColumn" prefWidth="75.0" text="id аптеки" />
+              <TableColumn fx:id="newWorkerIdColumn" prefWidth="91.0" text="id работника" />
+              <TableColumn fx:id="newDateColumn" prefWidth="75.0" text="Дата" />
+              <TableColumn fx:id="newWageColumn" prefWidth="75.0" text="Зарплата" />
+          </columns>
+      </TableView>
+      <Label layoutX="64.0" layoutY="134.0" prefHeight="17.0" prefWidth="177.0" text="Контракты разорваны" />
+      <Label layoutX="385.0" layoutY="134.0" prefHeight="17.0" prefWidth="119.0" text="Подписаны новые" />
+      <Button fx:id="button" layoutX="380.0" layoutY="60.0" mnemonicParsing="false" onAction="#onAction" prefHeight="44.0" prefWidth="128.0" text="Переподписать" />
+      <Label fx:id="countContracts" layoutX="243.0" layoutY="52.0" prefHeight="17.0" prefWidth="97.0" />
+   </children>
+</AnchorPane>

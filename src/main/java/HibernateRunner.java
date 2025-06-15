@@ -1,5 +1,5 @@
 import dao.*;
-import dao.requests.*;
+import dao.requests.QuantityMedicineInPharmacy;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -41,7 +41,8 @@ public class HibernateRunner {
         //getCheques(factory);
         //getPositions(factory);
         //testDAO();
-        System.out.println(AggregationRequest.revenueForDietarySupplements(70L));
+
+        System.out.println(QuantityMedicineInPharmacy.getQuantity(00L, 133L));
     }
 
     public static void getMedicines(SessionFactory factory) {

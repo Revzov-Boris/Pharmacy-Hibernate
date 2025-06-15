@@ -32,7 +32,10 @@ public class MainController {
             Map.entry("Работники аптеки", "/fxml/requests/currentContractsInPharmacy.fxml"),
             Map.entry("Дорогие закупки", "/fxml/requests/bigOrders.fxml"),
             Map.entry("Чеки с БАД", "/fxml/requests/chequesWith.fxml"),
-            Map.entry("Агрегатные запросы", "/fxml/requests/aggregateSearch.fxml")
+            Map.entry("Агрегатные запросы", "/fxml/requests/aggregateSearch.fxml"),
+            Map.entry("Удалить невыполненные закупки", "/fxml/changeRequests/deleteUnfulfulledOrders.fxml"),
+            Map.entry("Повысить зарплаты", "/fxml/changeRequests/RaiseWage.fxml"),
+            Map.entry("Купить", "/fxml/changeRequests/addBuy.fxml")
     );
 
     @FXML

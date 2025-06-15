@@ -14,7 +14,7 @@ import lombok.Setter;
 @Table(name = "positions")
 public class Position {
     @EmbeddedId
-    private PositionId positionId;
+    private PositionId positionId = new PositionId();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("chequeId")
@@ -27,6 +27,22 @@ public class Position {
     private Medicine medicine;
 
     private short quantity;
+
+    public void setCheque(Cheque cheque) {
+        this.cheque = cheque;
+        if (this.positionId == null) {
+            this.positionId = new PositionId();
+        }
+        this.positionId.setChequeId(cheque.getId());
+    }
+
+    public void setMedicine(Medicine medicine) {
+        this.medicine = medicine;
+        if (this.positionId == null) {
+            this.positionId = new PositionId();
+        }
+        this.positionId.setMedicineId(medicine.getId());
+    }
 
     @Override
     public String toString() {

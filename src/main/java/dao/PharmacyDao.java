@@ -13,4 +13,12 @@ public class PharmacyDao {
             return session.createQuery("FROM Pharmacy", Pharmacy.class).list();
         }
     }
+
+
+    public static Pharmacy getPharmacy(long id) {
+        var factory = new Configuration().addAnnotatedClass(Pharmacy.class).buildSessionFactory();
+        try (Session session = factory.openSession()){
+            return session.get(Pharmacy.class, id);
+        }
+    }
 }
